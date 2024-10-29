@@ -14,32 +14,42 @@
           <label class="label-form" for="nome">Nome: </label
           ><input class="input-form" type="text" id="nome" required />
           <label class="label-form" for="idade">Idade: </label>
-          <input class="input-form" type="text" id="idade" required />
+          <input
+            class="input-form"
+            type="number"
+            id="idade"
+            min="18"
+            required
+          />
           <label class="label-form" for="altura">Altura: </label>
           <input
             class="input-form"
             type="number"
             id="altura"
-            min="0"
+            min="0.01"
             step="0.01"
             required
           />
-          <label class="label-form" for="peso">Peso:</label>
+          <label class="label-form" for="peso">Peso: </label>
           <input
             class="input-form"
             type="number"
             id="peso"
-            min="0"
+            min="0.1"
             step="0.1"
             required
           />
-          <label class="label-form" for="activity">Atividade Física:</label>
+          <label class="label-form" for="gender">Sexo: </label>
+          <select class="input-form" id="gender">
+            <option value="f">Feminino</option>
+            <option value="m">Masculino</option>
+          </select>
+          <label class="label-form" for="activity">Atividade Física: </label>
           <select class="input-form" id="activity">
-            <option value="1.2">Sedentário</option>
-            <option value="1.375">Levemente ativo</option>
-            <option value="1.55">Moderadamente ativo</option>
-            <option value="1.725">Altamente ativo</option>
-            <option value="1.9">Extremamente ativo</option>
+            <option value="leve">Leve</option>
+            <option value="moderado">Moderado</option>
+            <option value="intenso">Intenso</option>
+            <option value="aposentado">Aposentado</option>
           </select>
           <button class="input-btn" type="button" onclick="calculate()">
             Calcular
