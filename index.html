@@ -7,8 +7,49 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>Calculos:</h1>
-    <div class="container"><div class="group-form"></div></div>
+    <div class="container">
+      <h1>Calculadora Nutricional</h1>
+      <form id="nutritionalForm">
+        <div class="group-form">
+          <label class="label-form" for="nome">Nome: </label
+          ><input class="input-form" type="text" id="nome" required />
+          <label class="label-form" for="idade">Idade: </label>
+          <input class="input-form" type="text" id="idade" required />
+          <label class="label-form" for="altura">Altura: </label>
+          <input
+            class="input-form"
+            type="number"
+            id="altura"
+            min="0"
+            step="0.01"
+            required
+          />
+          <label class="label-form" for="peso">Peso:</label>
+          <input
+            class="input-form"
+            type="number"
+            id="peso"
+            min="0"
+            step="0.1"
+            required
+          />
+          <label class="label-form" for="activity">Atividade Física:</label>
+          <select class="input-form" id="activity">
+            <option value="1.2">Sedentário</option>
+            <option value="1.375">Levemente ativo</option>
+            <option value="1.55">Moderadamente ativo</option>
+            <option value="1.725">Altamente ativo</option>
+            <option value="1.9">Extremamente ativo</option>
+          </select>
+          <button class="input-btn" type="button" onclick="calculate()">
+            Calcular
+          </button>
+        </div>
+      </form>
+      <div class="group-results">
+        <div id="results"></div>
+      </div>
+    </div>
     <script src="javascript.js"></script>
   </body>
 </html>
