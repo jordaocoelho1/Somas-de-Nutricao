@@ -11,17 +11,26 @@ function calculate() {
   const imc = weight / (height * height);
   const classImc = (imc) => {
     if (imc < 16) {
-      return "Magreza Grau III"
-    } else if (16 <= imc < 16.9) {
-      return "Magreza Grau II"
-    } else if (17 <= imc < 18.4) {
-      return "Magreza Grau I" 
-    } else if (18.5 <= imc <= 24.9) {
-      return "Peso Normal"
-    } else if (25 <= imc <= 29.9 ) {
-      return
+      return "Magreza Grau III";
+    } else if (imc >= 16 && imc < 17) {
+      return "Magreza Grau II";
+    } else if (imc >= 17 && imc < 18.5) {
+      return "Magreza Grau I";
+    } else if (imc >= 18.5 && imc < 25) {
+      return "Peso Normal";
+    } else if (imc >= 25 && imc < 30) {
+      return "Sobrepeso";
+    } else if (imc >= 30 && imc < 35) {
+      return "Obesidade Grau I";
+    } else if (imc >= 35 && imc < 40) {
+      return "Obesidade Grau II";
+    } else if (imc >= 40) {
+      return "Obesidade Grau III";
     }
-  }
+    return "Sem dados para a classificação";
+  };
+  const imcClassification = classImc(imc);
+
   // Cálculo do Peso Ideal (PI) - Min, Med, Max
   const ptMin = (gender) => (gender.toLowerCase() === "f" ? 18.7 : 20.1);
   const ptMed = (gender) => (gender.toLowerCase() === "f" ? 20.8 : 22);
@@ -131,6 +140,7 @@ function calculate() {
   resultsDiv.innerHTML = `
         <h2>Resultados para ${name}</h2>
         <p>IMC: ${imc.toFixed(2)}</p>
+        <p>Classificação IMC: ${imcClassification}</p>
         <p>Peso Ideal (Min): ${piMin.toFixed(2)} kg</p>
         <p>Peso Ideal (Med): ${piMed.toFixed(2)} kg</p>
         <p>Peso Ideal (Max): ${piMax.toFixed(2)} kg</p>
